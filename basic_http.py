@@ -8,5 +8,10 @@ class Regres(HttpUser):
 
     @task
     def test_get(self):
-        response = self.client.get("api/users?page=2")
-        assert_that(response.status_code).is_equal_to(200)
+        req = self.client.get("api/users?page=2")
+
+        #assertion status code
+        assert_that(req.status_code).is_equal_to(200)
+
+        #assertion Tipe Data
+        assert_that(req.json().get("page")).is_type_of(int)
