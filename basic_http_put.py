@@ -7,13 +7,13 @@ class Regres(HttpUser):
     
 
     @task
-    def test_post(self):
+    def test_put(self):
         payload = {
-            "name": "morpheus",
-            "job": "zion resident",
-            "updatedAt": "2024-06-08T13:03:38.912Z"
-        }
+    "name": "morpheus",
+    "job": "zion resident",
+    "updatedAt": "2024-06-08T13:03:38.912Z"
+    }
 
-        req = self.client.put("api/users/2", json=payload)
+        req = self.client.post("api/users", json=payload)
         print(req.json())
        
