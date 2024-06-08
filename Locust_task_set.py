@@ -27,7 +27,7 @@ class APi_task(TaskSet):
         "name": "morpheus",
         "job": "zion resident"
         }
-        req = self.client.get("api/users/2")
+        req = self.client.patch("api/users/2")
         print("test ke : PATCH")
 
     @task
@@ -37,7 +37,7 @@ class APi_task(TaskSet):
             "job": "zion resident"
         }
 
-        req = self.client.post("api/users/2", json=payload)
+        req = self.client.put("api/users/2", json=payload)
         print("test ke : PUT")
     
     @task
